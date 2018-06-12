@@ -1,3 +1,104 @@
 * {
 	box-sizing: border-box;
 }
+
+body {
+	font-family: Helvetica, Arial, sans-serif;
+	font-size: 18px;
+	background-color: Gainsboro;
+}
+
+.wrapper {
+	width: 100%;
+	max-width: 1200px;
+	height: auto;
+	margin: 0 auto;
+	background-color: white;
+}
+
+.brand {
+	padding: 50px 20px 20px;
+	text-transform: uppercase;
+}
+
+ul {
+	list-style-type: none;
+	padding: 0 20px;
+	margin: 0;
+}
+
+.avatar {
+    width: 4.5em;
+    height: auto;
+    border-radius: 50%;
+    float: left;
+    margin: 20px;
+}
+
+.employee-item {
+	width: 100%;
+	max-width: 370px;
+	height: auto;
+    border: 2px solid rgb(230,230,230);
+    border-radius: 5px;
+    margin: 20px 0;
+/* Add shadows to create the "card" effect */
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+}
+
+/* On mouse-over, add a deeper shadow */
+.employee-item:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+/* Add some padding inside the card container */
+.container {
+    padding: 2px 16px;
+}
+
+.cf:after { 
+   content: ""; 
+   display: table; 
+   height: 0; 
+   clear: both;
+}
+
+
+/* Media Queries -------------------------------------------------------------------------- */
+
+@media only screen and (min-width: 700px) {
+	.wrapper {
+		width: 90%;
+	}
+	.container {
+		font-size: .80em;
+		padding: 0;
+	}
+	.avatar {
+		width: 5.5em;
+	}
+	.employee-item {
+		width: 48%;
+		float: left;
+	}
+	.employee-item:nth-of-type(odd) {
+		margin-right: 20px;
+	}
+}
+
+
+@media only screen and (min-width: 1020px) {
+	.employee-item {
+		width: 100%;
+		width: calc(100% / 3.3);
+	}
+	.employee-item:nth-of-type(1n) {
+		margin-right: 20px;
+	}
+	ul,
+	.brand {
+		padding-left: 5%;
+	}
+
+}

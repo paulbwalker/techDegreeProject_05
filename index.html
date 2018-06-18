@@ -26,9 +26,28 @@
 		<!-- The Modal -->
 		<div id="myModal" class="modal">
 
+			<!-- Modal content -->
+			<div class="modal-content">
+				<span class="close">&times;</span>
+<!-- 				<img class="avatar modal-avatar" src="https://randomuser.me/api/portraits/ ${ ) " alt="Avatar"> -->
+				<div class="modal-text container">
+					<h4 class="name">${ .name }</h4>
+					<p class="email">${ .email }</p>
+					<p class="city">${ .city }</p>
+				</div>
+				<div class="modal-more-info container">
+					<h4 class="Phone">${ results.Phone }</h4>
+					<p class="address">${ results.address }</p>
+					<p class="dob">${ console.log(results) }</p>
+				</div>
+			</div>
+
 		</div>
+
+	</div>
 
 
 	<script src="js/app.js"></script>	
+	<script src="js/modal.js"></script>	
 </body>
 </html>

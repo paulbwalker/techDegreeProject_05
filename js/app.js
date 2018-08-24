@@ -1,5 +1,6 @@
 'use strict';
 
+// Declare variables
 const cardContent = document.querySelector('.card-content');
 const myModal = document.getElementById('myModal');
 const modalInfo = document.getElementsByClassName('modal-info');
@@ -10,12 +11,13 @@ const header = document.querySelector('.masthead');
 
 
 
-// Simple display function add class and removes class to hide/show modal. el is shorthand for element.
+// Simple display function add class and removes class to show modal. el is shorthand for element.
 const showModalFunc = (el) => {
   el.classList.remove('is-hidden');
   el.classList.add('is-flex-display');
 }
 
+// Simple display function add class and removes class to hide. el is shorthand for element.
 const removeModalFunc = (el) => {
   el.classList.remove('is-flex-display');
   el.classList.add('is-hidden');
@@ -44,12 +46,9 @@ button.classList.add('search-btn');
 button.setAttribute('onkeyup', 'clearFilter()');
 button.type = 'reset';
 button.textContent = 'filter';
-    
-const para = document.createElement('p');
 
 
 
-/* END OF FORM ---------------------------------------------------- */
 
 
 
@@ -64,7 +63,7 @@ function fetchData(url) {
 
 /* HELPER FUNCTIONS ---------------------------------------------- */
 
-
+// Used IIFE to place in the browser when page loads
   (function generateResults() {
 
     // You call the function fetchData to call .then(res => res.json) then chain data method
@@ -72,6 +71,7 @@ function fetchData(url) {
 
     // .then(data => console.log(data.results)) 
     .then(data => {
+      // use listEmployee to store the fetch data for later use.
       const listEmployee = data.results;
       data.results.map(employees => {
         cardContent.innerHTML += `
@@ -86,6 +86,7 @@ function fetchData(url) {
                             `;
       });
       const card = document.querySelectorAll('.card');
+      // Place this function to bridge employeeDetail function.
       employeeDetail(listEmployee, card);
   })
 })();  
@@ -94,7 +95,7 @@ function fetchData(url) {
   /* MODAL --------------------------------------------------------- */
 
 
-// Pass through generateResults add eventListener to get modal
+// Create the modal and assign to browser
 
 const employeeDetail = ( listEmployee, card) => {
   const modalDisplay = document.querySelector('.modal-display');
@@ -127,6 +128,7 @@ const employeeDetail = ( listEmployee, card) => {
       </div> 
     `).join('');
     modalDisplay.innerHTML = generateModal;
+    // use function to bridge between function
     modalDetails(card, listEmployee);
   }
 
@@ -160,6 +162,7 @@ const employeeDetail = ( listEmployee, card) => {
 
 
 /* MODAL DISPLAY & UI ---------------------------------------------------------------------*/
+// this function closes modal as well as go through the employees.
 
 function modalDetails (card, listEmployee) {
   for (let i = 0; i < card.length; i++) { 

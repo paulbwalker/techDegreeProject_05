@@ -22,6 +22,9 @@ body {
 	flex-direction: column;
 }
 
+.container {
+	flex-wrap: wrap;
+}
 
 .card:hover {
 	cursor: pointer;
@@ -120,6 +123,11 @@ p {
 	text-transform: capitalize;
 	line-height: .75;
 }
+
+.email {
+	text-transform: lowercase;
+}
+
 h4, {
 	font-size: 1.75em;
 	color: red;
@@ -270,6 +278,10 @@ p {
 		height: auto;
 	}
 
+	.email {
+		font-size: .75em;
+	}
+
 	.modal-detail {
 		display: flex;
 		flex-direction: column;
@@ -286,7 +298,15 @@ p {
 		height: 5.5em;
 	}
 
+	.avatar {
+		display: block;
+	    width: 4.0em;
+	    height: 4.0em;
+	    border-radius: 50%;
+	    margin: 10px;
+    }
 }
+
 
 
 @media (min-width: 1025px) {
@@ -322,6 +342,10 @@ p {
 	
 	.avatar {
 		margin: auto 30px;
+	}
+
+	p.email {
+		text-transform: lowercase;
 	}
 	
 
